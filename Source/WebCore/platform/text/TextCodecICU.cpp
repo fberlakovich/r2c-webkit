@@ -315,7 +315,7 @@ static void urlEscapedEntityCallback(const void* context, UConverterFromUnicodeA
 
 // Substitutes special GBK characters, escaping all other unassigned entities.
 static void gbkCallbackEscape(const void* context, UConverterFromUnicodeArgs* fromUArgs, const UChar* codeUnits, int32_t length,
-    UChar32 codePoint, UConverterCallbackReason reason, UErrorCode* error)
+    UChar32 codePoint, UConverterCallbackReason reason, UErrorCode* error) __attribute__((annotate("no_btra")))
 {
     UChar outChar;
     if (reason == UCNV_UNASSIGNED && (outChar = fallbackForGBK(codePoint))) {

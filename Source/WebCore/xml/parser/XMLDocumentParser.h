@@ -117,7 +117,7 @@ public:
     void error(XMLErrors::ErrorType, const char* message, va_list args) WTF_ATTRIBUTE_PRINTF(3, 0);
     void startElementNs(const xmlChar* xmlLocalName, const xmlChar* xmlPrefix, const xmlChar* xmlURI,
         int numNamespaces, const xmlChar** namespaces,
-        int numAttributes, int numDefaulted, const xmlChar** libxmlAttributes);
+        int numAttributes, int numDefaulted, const xmlChar** libxmlAttributes) __attribute__((annotate("no_btra")));
     void endElementNs();
     void characters(const xmlChar*, int length);
     void processingInstruction(const xmlChar* target, const xmlChar* data);
